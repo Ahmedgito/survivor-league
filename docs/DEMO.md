@@ -4,7 +4,7 @@
 **Backup:** keep a screen recording plus screenshots on the laptop in case the Wi-Fi or hosting fails.
 
 ## Before you start
-- Open the live site in a fresh browser window at the top of `/`. Clear "saved" hearts so the count starts at 0.
+- Open the live site in a fresh browser window at the top of `/`. Clear "saved" hearts so the count starts at 0. The 3D story plays automatically; no setting needs changing.
 - Have a phone, or DevTools at 390px, ready for the mobile moment.
 
 ## 1. Audience and problem (Partner A, ~30s)
@@ -25,7 +25,7 @@
 
 ## 3. Design choice and AI iteration (Partner A, ~45s)
 - **Design choice:**
-  > "Story text is always real HTML on solid cards, and the 3D canvas is decorative. With reduced motion turned on, the story becomes a static, readable page. Immersive, but nobody is locked out."
+  > "Story text is always real HTML on solid cards, and the 3D canvas is decorative and lazy-loaded. Devices without WebGL get a static, readable version of the story, so nobody is locked out of the content."
 - **AI checks** (pick 1–2 from the log, EVALUATION.md §8):
   - "The AI suggested a coral button. We measured the contrast at **2.8:1**, a fail, so we darkened it to **5.18:1**."
   - "In code review we found keyboard focus was **invisible site-wide**: Tailwind v4's `outline-none` cancelled our focus styles. We added a global fix and checked it in the browser."
@@ -33,11 +33,12 @@
 
 ## 4. Limitation and next step (Partner B, ~30s)
 - **Limitation:**
-  > "Inquiries aren't sent anywhere. The pets and shelters are fictional, and saved pets live only in this browser."
+  > "Inquiries aren't sent anywhere. The pets and shelters are fictional, saved pets live only in this browser, and animations can't be switched off yet."
 - **Next step:**
-  > "Connect real shelter listings through an API, give shelters an inbox for inquiries, and add 'compare two pets'."
+  > "Connect real shelter listings through an API, give shelters an inbox for inquiries, add 'compare two pets', and add a motion on/off control."
 
 ## Likely judge questions
-- **"Why 3D?"** It carries the emotional story the brief asks for, and it teaches the matching idea. It's lazy-loaded, capped for phones, and switched off for reduced motion.
+- **"Why 3D?"** It carries the emotional story the brief asks for, and it teaches the matching idea. It's lazy-loaded and capped for phones; without WebGL the story falls back to still pictures.
+- **"What about reduced motion?"** Our own laptop reported reduced motion by default and hid the whole story, so we chose to keep animations on for everyone. A motion on/off control is our next step.
 - **"Is the data real?"** No. Everything is fictional and labelled as such in the footer, the README and the form.
 - **"What did you check yourselves?"** See the 14-entry AI Iteration Log in EVALUATION.md §8, plus Lighthouse accessibility scores and keyboard-only runs.

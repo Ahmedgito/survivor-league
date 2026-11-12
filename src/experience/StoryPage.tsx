@@ -10,13 +10,13 @@
  */
 import { Component, lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowDown, ChevronDown, PawPrint, Play } from 'lucide-react'
+import { ArrowDown, ChevronDown, PawPrint } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { useLenis } from '@/app/SmoothScroll'
 import { buttonClasses } from '@/components/ui/Button'
-import { announce, hasWebGL, isLowPower, setMotionPreference, useMotionPreference, useReducedMotion } from '@/lib/a11y'
+import { hasWebGL, isLowPower, useReducedMotion } from '@/lib/a11y'
 import { cn } from '@/lib/cn'
 import { PETS } from '@/data/pets'
 import { BEAT_CLASSES, CHAPTERS, HomeTitle, NIGHTS, Words, beat, type Chapter } from './chapters'
@@ -234,10 +234,7 @@ export default function StoryPage() {
       ) : (
         <div id="story" className="relative z-10">
           <StaticSection art={HERO_ART} first>
-            <Card dark>
-              {hero}
-              {reduced && webgl && !failed && <MotionOptIn />}
-            </Card>
+            <Card dark>{hero}</Card>
           </StaticSection>
           {CHAPTERS.map((ch) => (
             <StaticSection key={ch.id} art={ch.art}>
@@ -254,33 +251,6 @@ export default function StoryPage() {
 
 /* ------------------------------------------------------------------ pieces */
 
-/**
- * Shown on the still-pictures version when the device (or the visitor) asked for reduced motion.
- * Respects that choice by default, but lets people opt in to the animated story.
- */
-function MotionOptIn() {
-  const pref = useMotionPreference()
-  const enable = () => {
-    setMotionPreference('on')
-    announce("Animations on. Scroll to play Biscuit's story.")
-  }
-  return (
-    <div className="mt-5 rounded-2xl bg-night-2 p-4 ring-1 ring-white/10">
-      <p className="text-sm text-on-night-muted">
-        {pref === 'off'
-          ? 'Animations are turned off, so Biscuit’s story is shown as still pictures.'
-          : 'Your device asks for reduced motion, so Biscuit’s story is shown as still pictures.'}
-      </p>
-      <button
-        type="button"
-        onClick={enable}
-        className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-full bg-sun px-5 font-bold text-ink transition hover:brightness-95"
-      >
-        <Play aria-hidden className="size-4" /> Play the animated story
-      </button>
-    </div>
-  )
-}
 
 function StaticSection({ art, first, children }: { art: Chapter['art']; first?: boolean; children: ReactNode }) {
   return (

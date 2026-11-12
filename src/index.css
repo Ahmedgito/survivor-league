@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
+/* Animations are always on (product decision): `motion-reduce:` never applies, `motion-safe:` always does. */
+@custom-variant motion-reduce (@media not all);
+@custom-variant motion-safe (@media all);
+
 /* ───────────── PawPath design tokens (single source of truth) ─────────────
    Full verified contrast table: docs/plan/01-experience.md §4.1            */
 @theme {
@@ -106,26 +110,8 @@ html.lenis, html.lenis body { height: auto; }
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
-/* Reduced motion: follows the device setting unless the visitor chose otherwise with the
-   in-site "Animations" toggle (html[data-motion] is set by src/lib/a11y.ts). */
-@media (prefers-reduced-motion: reduce) {
-  html:not([data-motion='on']) *,
-  html:not([data-motion='on']) *::before,
-  html:not([data-motion='on']) *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-html[data-motion='off'] *,
-html[data-motion='off'] *::before,
-html[data-motion='off'] *::after {
-  animation-duration: 0.01ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0.01ms !important;
-  scroll-behavior: auto !important;
-}
+/* Motion policy: animations are always on (product decision, see src/lib/a11y.ts).
+   The reduced-motion kill-switch was removed and `motion-reduce:` is disabled above. */
 
 /* Guaranteed visible keyboard focus everywhere (unlayered → beats Tailwind utilities).
    Tailwind v4's `outline-none` sets outline-style:none, which silently cancelled

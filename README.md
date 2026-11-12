@@ -27,8 +27,7 @@
 
 ## Accessibility and responsive checks
 - Mobile-first; tested at 360 / 390 / 768 / 1280 px.
-- `prefers-reduced-motion`: smooth scroll is turned off and the story becomes a static, readable sequence. There is also a no-WebGL fallback.
-- **Animations toggle** (navbar, or the mobile menu): visitors can switch motion on or off themselves (`aria-pressed`). The still version of the story offers "Play the animated story". The device setting stays the default. We added this after finding that our own laptop's Windows "Animation effects" setting silently disabled the whole 3D story.
+- **Motion:** animations are always on, by team decision, so every visitor gets the scroll story. Some laptops, including ours, report reduced motion by default and would otherwise only show still pictures. All story text is still real HTML on solid cards, and devices without WebGL get a static, readable version of the story.
 - Skip links ("Skip to content", "Skip the story"), visible focus rings, labelled form fields with `aria-describedby` errors, `aria-pressed` filter chips, an `aria-live` results count.
 - Lighthouse Accessibility (mobile, 360px): **100** on `/pets`, `/pets/biscuit`, `/pets/bubbles`, `/match`, `/match/results`, `/adopt/biscuit` and `/saved`; Best Practices 100
 
@@ -41,11 +40,11 @@
   - We refused a dog model copied from another public repo because it belongs to Dogstudio, and used only CC0 models instead.
   - All 3D models rendered almost black (they export as fully metallic). We made the materials non-metallic and re-checked every chapter in screenshots.
   - Keyboard focus was invisible site-wide: Tailwind v4's `outline-none` cancelled our focus styles. We added a global fix and verified it on every control.
-  - On our own laptop the story never animated, because Windows "Animation effects" was off. We added a visitor-controlled Animations toggle.
+  - On our own laptop the story never animated, because Windows "Animation effects" was off. We now force animations on for every visitor. Reviewing that code also caught a bug: `"prefers-reduced-motion".includes("reduce")` is always true, so we match the query value instead.
 
 ## Limitations and next steps
-- **Limitations:** inquiries aren't sent anywhere; pets and shelters are fictional; saved pets only persist in this browser.
-- **Next steps:** real shelter listings via an API, shelter-side inquiry management, comparing two pets side by side.
+- **Limitations:** inquiries aren't sent anywhere; pets and shelters are fictional; saved pets only persist in this browser; visitors who prefer reduced motion can't switch the animations off yet.
+- **Next steps:** real shelter listings via an API, shelter-side inquiry management, comparing two pets side by side, and a motion on/off control.
 
 ## Run locally
 ```bash
