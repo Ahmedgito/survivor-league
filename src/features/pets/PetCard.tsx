@@ -4,7 +4,7 @@ import SpotlightCard from '@/components/reactbits/SpotlightCard'
 import { cn } from '@/lib/cn'
 import type { Pet } from '@/data/types'
 import { SaveHeart } from './SaveHeart'
-import { PetVisual } from './PetVisual'
+import { PetPhoto } from './PetPhoto'
 import { ENERGY_LABEL, SIZE_LABEL, metaLine } from './petLabels'
 
 export interface PetCardProps {
@@ -15,6 +15,8 @@ export interface PetCardProps {
   reasons?: string[]
   /** Heading level for the pet name. Default 'h3' (cards sit under a page h2/h1). */
   headingLevel?: 'h2' | 'h3'
+  /** Above-the-fold card (first row): load its photo eagerly with high priority. */
+  priority?: boolean
 }
 
 const GOOD_WITH = [
@@ -28,7 +30,7 @@ const GOOD_WITH = [
  * The name link is "stretched" over the whole card with ::after; the save heart sits above it
  * (z-10), so there are no nested interactive elements. Tab order: name link, then heart.
  */
-export function PetCard({ pet, matchScore, reasons, headingLevel = 'h3' }: PetCardProps) {
+export function PetCard({ pet, matchScore, reasons, headingLevel = 'h3', priority = false }: PetCardProps) {
   const Heading = headingLevel
   const shownReasons = reasons?.slice(0, 3) ?? []
   const location = useLocation()
@@ -43,7 +45,12 @@ export function PetCard({ pet, matchScore, reasons, headingLevel = 'h3' }: PetCa
       )}
     >
       <div className="relative">
-        <PetVisual pet={pet} className="aspect-[16/10] w-full" />
+        <PetPhoto
+          pet={pet}
+          priority={priority}
+          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+          className="aspect-[16/10] w-full"
+        />
         {typeof matchScore === 'number' && (
           <p className="absolute bottom-3 left-3 rounded-full bg-[var(--color-accent-strong)] px-3 py-1 text-sm font-bold text-white shadow-[var(--shadow-card)]">
             {Math.round(matchScore)}% match

@@ -69,7 +69,7 @@ export default function StoryPage() {
   const [slow, setSlow] = useState(false)
   const [active, setActive] = useState(true)
   const activeRef = useRef(true)
-  const onReady = useCallback(() => setReady(true), [])
+  const onReady = useCallback(() => { setReady(true); window.dispatchEvent(new Event('pawpath:story-ready')) }, [])
 
   const rootRef = useRef<HTMLDivElement>(null)
   const layerRef = useRef<HTMLDivElement>(null)

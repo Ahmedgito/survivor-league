@@ -273,9 +273,9 @@ export default function CatalogPage() {
         <>
           <h2 className="sr-only">Pets</h2>
           <ul className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {results.map((pet) => (
+            {results.map((pet, i) => (
               <li key={pet.id}>
-                <PetCard pet={pet} />
+                <PetCard pet={pet} priority={i < 3} />
               </li>
             ))}
           </ul>

@@ -4,6 +4,8 @@ import {
   ArrowLeft,
   ArrowRight,
   Baby,
+  Box,
+  Camera,
   Cat,
   Check,
   Dog,
@@ -24,6 +26,8 @@ import type { Pet } from '@/data/types'
 import { hasWebGL, useReducedMotion } from '@/lib/a11y'
 import { cn } from '@/lib/cn'
 import { PetCard } from './PetCard'
+import { PetPhoto } from './PetPhoto'
+import { getPetPhoto } from './petPhotos'
 import { PetVisual } from './PetVisual'
 import { SaveHeart } from './SaveHeart'
 import {
@@ -84,7 +88,7 @@ function Profile({ pet }: { pet: Pet }) {
       <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
         {/* ---- Visual ---- */}
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <Turntable pet={pet} />
+          <ProfileVisual pet={pet} />
         </div>
 
         {/* ---- Details ---- */}
@@ -273,6 +277,61 @@ function Profile({ pet }: { pet: Pet }) {
       </section>
 
     </article>
+  )
+}
+
+/* ---------- Hero: real photo first, 3D model as a secondary view ---------- */
+
+function ProfileVisual({ pet }: { pet: Pet }) {
+  const photo = getPetPhoto(pet.id)
+  const [view, setView] = useState<'photo' | '3d'>('photo')
+  if (!photo) return <Turntable pet={pet} />
+
+  const toggle = (value: 'photo' | '3d', label: string, Icon: typeof Camera) => (
+    <button
+      type="button"
+      aria-pressed={view === value}
+      onClick={() => setView(value)}
+      className={buttonClasses({ variant: view === value ? 'primary' : 'secondary' })}
+    >
+      <Icon aria-hidden="true" className="size-5" />
+      {label}
+    </button>
+  )
+
+  return (
+    <div>
+      <div className="mb-3 flex flex-wrap gap-2" role="group" aria-label={`How to show ${pet.name}`}>
+        {toggle('photo', 'Photo', Camera)}
+        {toggle('3d', '3D model', Box)}
+      </div>
+      {view === 'photo' ? (
+        <figure className="m-0">
+          <PetPhoto
+            pet={pet}
+            priority
+            fallbackSize="lg"
+            sizes="(min-width: 1152px) 552px, (min-width: 1024px) 46vw, 100vw"
+            className="aspect-[4/3] w-full rounded-[2rem] shadow-[var(--shadow-card)]"
+          />
+          <figcaption className="mt-3 text-sm text-muted">
+            Photo:{' '}
+            <a
+              href={photo.credit.photoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-ink underline underline-offset-4"
+            >
+              {photo.credit.name} / {photo.credit.source}
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>{' '}
+            ({photo.credit.source} License). A stand-in photo: {pet.name} is a fictional sample pet.
+          </figcaption>
+        </figure>
+      ) : (
+        <Turntable pet={pet} />
+      )}
+    </div>
   )
 }
 

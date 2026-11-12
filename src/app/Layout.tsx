@@ -137,8 +137,9 @@ export function Footer() {
         <div>
           <p className="font-semibold text-ink">Credits</p>
           <p className="mt-1">
-            3D animals &amp; props: Quaternius, KayKit and others via Poly Pizza (CC0). UI pieces adapted from React Bits
-            &amp; 21st.dev. Built for the ACM MAJU Vibe Coding Competition.
+            Pet photos: Unsplash photographers (Unsplash License), credited on each pet profile. 3D animals &amp; props:
+            Quaternius, KayKit and others via Poly Pizza (CC0). UI pieces adapted from React Bits &amp; 21st.dev. Built for
+            the ACM MAJU Vibe Coding Competition.
           </p>
         </div>
       </div>

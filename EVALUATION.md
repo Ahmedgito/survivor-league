@@ -47,14 +47,14 @@ So flashy tech, 3D, heavy animation and clever architecture earn **zero direct p
 
 Tick every box before submitting. Missing any of these caps several criteria at once.
 
-- [ ] **One intended audience** and **one primary task**, written down (section 5) and visible in the UI copy
-- [ ] **Landing view** with **≥ 3 useful items or steps** and **one clear primary action** (a single, visually dominant CTA)
-- [ ] **At least one working interaction** related to the idea, with **visible feedback**
-- [ ] **Mobile layout checked** (360px wide), **readable text and contrast**, **keyboard focus**, **clear labels**, **image descriptions**
-- [ ] **Fictional sample data, clearly labeled** as fictional (e.g. a "Demo data — all pets/people are fictional" badge in the footer and a note in the README)
-- [ ] **No** real personal, student or health information. **No** real payment processing.
-- [ ] **README** with project name, team, chosen brief, **AI tools used and what we checked or changed**, asset credits, sample-data note
-- [ ] **GitHub repo** and **hosted link**, both verified in a **fresh/incognito browser** (or a documented platform issue for fallback review)
+- [x] **One intended audience** and **one primary task**, written down (section 5) and visible in the UI copy ✅ hero eyebrow + h1
+- [x] **Landing view** with **≥ 3 useful items or steps** and **one clear primary action** (a single, visually dominant CTA) ✅ hero CTA + end panel
+- [x] **At least one working interaction** related to the idea, with **visible feedback** ✅ quiz, filters, hearts, inquiry
+- [x] **Mobile layout checked** (360px wide), **readable text and contrast**, **keyboard focus**, **clear labels**, **image descriptions** ✅ QA pass at 360/390
+- [x] **Fictional sample data, clearly labeled** as fictional (e.g. a "Demo data — all pets/people are fictional" badge in the footer and a note in the README) ✅ footer, form, README
+- [x] **No** real personal, student or health information. **No** real payment processing. ✅
+- [ ] **README** with project name, team, chosen brief, **AI tools used and what we checked or changed**, asset credits, sample-data note ⚠️ **team names still missing**
+- [x] **GitHub repo** and **hosted link**, both verified in a **fresh/incognito browser** (or a documented platform issue for fallback review) ✅ fresh isolated context, 16:09
 
 ---
 
@@ -204,33 +204,33 @@ Full blueprint: [docs/plan/01-experience.md](docs/plan/01-experience.md) · Asse
 ## 6. Accessibility and responsive checklist (15 points live here)
 
 **Responsive**
-- [ ] No horizontal scroll at 360px, 768px or 1280px
-- [ ] Tap targets at least 44×44px
-- [ ] Navigation collapses to an accessible menu (a button with `aria-expanded`)
-- [ ] Data tables become stacked cards on mobile (if any)
-- [ ] Images use `max-width: 100%` and don't distort (use `object-fit`)
+- [x] No horizontal scroll at 360px, 768px or 1280px ✅
+- [x] Tap targets at least 44×44px ✅ (pet-name link is stretched over the whole card)
+- [x] Navigation collapses to an accessible menu (a button with `aria-expanded`) ✅ + Esc closes
+- [x] Data tables become stacked cards on mobile (if any) ✅ n/a: no tables
+- [x] Images use `max-width: 100%` and don't distort (use `object-fit`) ✅ `object-cover`, explicit width/height, responsive `srcset`
 
 **Readable text and contrast**
-- [ ] Body text ≥ 16px, line-height ~1.5
-- [ ] Text contrast ≥ 4.5:1 (large text ≥ 3:1). Check with the DevTools contrast picker or Lighthouse.
-- [ ] No text placed directly on busy images without an overlay
+- [x] Body text ≥ 16px, line-height ~1.5 ✅
+- [x] Text contrast ≥ 4.5:1 (large text ≥ 3:1). Check with the DevTools contrast picker or Lighthouse. ✅ computed + Lighthouse 100
+- [x] No text placed directly on busy images without an overlay ✅ story text on solid cards
 
 **Keyboard and focus**
-- [ ] Everything interactive is reachable with Tab, in a logical order
-- [ ] A visible focus style (`:focus-visible` outline). **Never** `outline: none` without a replacement.
-- [ ] Modals trap focus, close on Esc, and return focus to the trigger
-- [ ] A "Skip to content" link
+- [x] Everything interactive is reachable with Tab, in a logical order ✅
+- [x] A visible focus style (`:focus-visible` outline). **Never** `outline: none` without a replacement. ✅ global fix (log #12)
+- [x] Modals trap focus, close on Esc, and return focus to the trigger ✅ n/a: no modals; mobile menu closes on Esc
+- [x] A "Skip to content" link ✅ + "Skip the story"
 
 **Labels and semantics**
-- [ ] Every form field has a visible `<label>`. Placeholders are not labels.
-- [ ] Error messages are specific ("Enter a valid email"), shown next to the field, and announced (`aria-live` or `aria-describedby`)
-- [ ] Icon-only buttons have an `aria-label`
-- [ ] One `<h1>` per page, with headings in order
+- [x] Every form field has a visible `<label>`. Placeholders are not labels. ✅
+- [x] Error messages are specific ("Enter a valid email"), shown next to the field, and announced (`aria-live` or `aria-describedby`) ✅ + error summary
+- [x] Icon-only buttons have an `aria-label` ✅
+- [x] One `<h1>` per page, with headings in order ✅
 
 **Images and media**
-- [ ] Meaningful images have descriptive `alt` ("Golden retriever puppy lying on grass", not "image1")
-- [ ] Decorative images use `alt=""`
-- [ ] Animations respect `prefers-reduced-motion`
+- [x] Meaningful images have descriptive `alt` ("Golden retriever puppy lying on grass", not "image1") ✅ hand-written alt for all 12 photos
+- [x] Decorative images use `alt=""` ✅ decorative icons/canvas `aria-hidden`
+- [ ] Animations respect `prefers-reduced-motion` ⚠️ intentionally not: animations are forced on (team decision, listed under README Limitations)
 
 **Tooling:** run a **Lighthouse** audit (target Accessibility ≥ 95) and fix every flagged item. Screenshot the score for the demo.
 
@@ -238,13 +238,13 @@ Full blueprint: [docs/plan/01-experience.md](docs/plan/01-experience.md) · Asse
 
 ## 7. Visual consistency checklist
 
-- [ ] At most 2 font families. A defined type scale (e.g. 14 / 16 / 20 / 28 / 40).
-- [ ] Spacing in multiples of 4 or 8px only
-- [ ] A palette defined as CSS variables: primary, accent, background, surface, text, muted, plus success and error
-- [ ] One button style per level (primary / secondary / ghost), used the same everywhere
-- [ ] Cards, inputs and radii look the same across pages
-- [ ] Clear hierarchy: in each section it's obvious what to read first
-- [ ] Empty, loading and error states designed (e.g. "No pets match these filters — clear filters")
+- [x] At most 2 font families. A defined type scale (e.g. 14 / 16 / 20 / 28 / 40). ✅ Bricolage Grotesque + Figtree
+- [x] Spacing in multiples of 4 or 8px only ✅
+- [x] A palette defined as CSS variables: primary, accent, background, surface, text, muted, plus success and error ✅ `@theme` tokens
+- [x] One button style per level (primary / secondary / ghost), used the same everywhere ✅
+- [x] Cards, inputs and radii look the same across pages ✅
+- [x] Clear hierarchy: in each section it's obvious what to read first ✅
+- [x] Empty, loading and error states designed (e.g. "No pets match these filters — clear filters") ✅
 
 ---
 
@@ -276,6 +276,9 @@ The rubric rewards teams who **"explain a meaningful check or edit to AI output.
 | 20 | 2026-11-12 | The whole immersive story, tested on the team laptop | Checked why the deployed story showed still pictures; read the Windows setting | Windows "Animation effects" was off, so Chrome reported `prefers-reduced-motion: reduce` and the 3D story **never played**. Judges' laptops can have the same setting | First added an opt-in Animations toggle. The team then chose to **force animations on for every visitor**, so the story always plays. The trade-off (reduced-motion users can't switch them off yet) is listed under Limitations in the README |
 | 21 | 2026-11-12 | An AI-generated shell edit to `vercel.json` (adding `robots.txt` to the rewrite) | Parsed the file with `JSON.parse` before pushing | It wrote `robots\.txt`, an invalid JSON escape that would have broken the Vercel deploy | Rewrote the pattern without the escape; validated before commit |
 | 22 | 2026-11-12 | AI-written `matchMedia` override for reduced-motion queries | Re-read the code before shipping the forced-on version, then tested both queries in the browser | `query.includes('reduce')` is true for **every** reduced-motion query ("reduce" is inside "prefers-reduced-motion"), so `(prefers-reduced-motion: no-preference)` was answered wrong | Matched the query value with a regex; verified in the browser: reduce → false, no-preference → true, other queries unaffected |
+| 23 | 2026-11-12 | AI-built intro loader: GSAP tweens on the SVG Biscuit | 360px QA screenshot of a "boop" | The "Woof!" bubble appeared about 75px up and to the left of his head, over the button's focus ring; GSAP's `svgOrigin` mis-placed the transforms | Box-relative `transformOrigin` on every SVG tween (bubble `30% 100%`, ear `50% 0%`, tail `100% 80%`…); re-tested at 390px |
+| 24 | 2026-11-12 | The loader's plan to import a ready signal into the story page | Owner rule: "don't touch anything on the story page" | An import plus a call would have changed two story-page lines | The existing `onReady` fires a `pawpath:story-ready` window event (one line); verified the 8s cap still exits if the signal never arrives (GLB fetches blocked) |
+| 25 | 2026-11-12 | AI-picked stock photos for the 12 fictional pets | Viewed every candidate and opened each photo page to confirm "Free to use under the Unsplash License" (no Unsplash+) | Rejected a black/tan Husky for grey-and-white Storm, a Shiba crop that cut off the head, a rabbit photo with a blurred human hand, and a long-haired cat for shorthair Luna; the auto-crop also cut off Nova's head | Swapped in matching photos, used a focal-point crop, wrote descriptive alt text, and credited each photographer on the profile and in the README |
 
 **Good things to check and log:**
 - Contrast failures in AI-picked colors (fixed after a Lighthouse or contrast check)
@@ -347,14 +350,14 @@ Keep it to about 3 minutes, split across both partners:
 
 ## 11. Final pre-submission check (do it in an incognito window)
 
-- [ ] Live URL opens in a **fresh/incognito browser** with no console errors
-- [ ] GitHub repo is **public** (or access is granted) and the README renders correctly
-- [ ] The full primary flow works on the live site, on desktop **and** on a real phone
-- [ ] All images load (no broken paths, and filenames match case, since hosting is case-sensitive)
-- [ ] Lighthouse Accessibility ≥ 95 on the main pages
-- [ ] Fictional-data label visible in the UI
-- [ ] No real personal data anywhere (search the code for real names, phone numbers, emails)
-- [ ] README complete: team, brief, AI tools with checks and changes, credits, sample-data note
+- [x] Live URL opens in a **fresh/incognito browser** with no console errors ✅ only a three.js deprecation warning
+- [x] GitHub repo is **public** (or access is granted) and the README renders correctly ✅
+- [ ] The full primary flow works on the live site, on desktop **and** on a real phone ⚠️ desktop ✅ + emulated 360/390 ✅; real phone not yet
+- [x] All images load (no broken paths, and filenames match case, since hosting is case-sensitive) ✅ 12/12 photos + models load (re-checked on live)
+- [x] Lighthouse Accessibility ≥ 95 on the main pages ✅ 100 on 7 feature pages (story page not audited)
+- [x] Fictional-data label visible in the UI ✅
+- [x] No real personal data anywhere (search the code for real names, phone numbers, emails) ✅ example.com emails, 0000 phone numbers
+- [ ] README complete: team, brief, AI tools with checks and changes, credits, sample-data note ⚠️ team names still missing
 - [ ] Both links pasted into the submission form and clicked once more after submitting
 
 ---

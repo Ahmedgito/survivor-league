@@ -128,3 +128,36 @@ html.lenis, html.lenis body { height: auto; }
 /* QA: keep focused/anchored elements clear of the fixed navbar (≈88px tall) when the
    browser scrolls them into view (Tab, skip link, #anchors). WCAG 2.4.11 Focus Not Obscured. */
 html { scroll-padding-top: 6.5rem; }
+
+/* ── Intro loader (src/app/loader/IntroLoader.tsx) ── */
+.pp-intro { --ix: 50%; --iy: 50%; --ir: 0px; }
+.pp-intro.pp-iris {
+  -webkit-mask-image: radial-gradient(circle at var(--ix) var(--iy), transparent var(--ir), #000 calc(var(--ir) + 64px));
+  mask-image: radial-gradient(circle at var(--ix) var(--iy), transparent var(--ir), #000 calc(var(--ir) + 64px));
+}
+.pp-breathe { transform-box: fill-box; transform-origin: 50% 100%; animation: pp-breathe 3.4s ease-in-out infinite; }
+@keyframes pp-breathe { 50% { transform: scale(1.012, 1.05); } }
+.pp-sway { transform-box: fill-box; transform-origin: 100% 70%; animation: pp-sway 3.4s ease-in-out infinite; }
+@keyframes pp-sway { 50% { transform: rotate(-6deg); } }
+.pp-follow { transform-box: fill-box; transform-origin: 15% 80%; }
+.pp-z { transform-box: fill-box; transform-origin: 50% 50%; opacity: 0; animation: pp-z 2.4s ease-in infinite; }
+@keyframes pp-z {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translate(14px, -28px) scale(1.15); }
+}
+.pp-zzz, .pp-eye-open, .pp-eye-closed { transition: opacity 0.15s; }
+.pp-eye-open { opacity: 0; }
+.pp-intro[data-peek="true"] .pp-zzz, .pp-intro[data-awake] .pp-zzz { opacity: 0; }
+.pp-intro[data-peek="true"] .pp-eye-open, .pp-intro[data-awake] .pp-eye-open { opacity: 1; }
+.pp-intro[data-peek="true"] .pp-eye-closed, .pp-intro[data-awake] .pp-eye-closed { opacity: 0; }
+.pp-paw {
+  display: inline-block; color: var(--color-on-night); opacity: 0.2;
+  transform: translateY(var(--py)) rotate(var(--pr)) scale(0.85);
+  transition: opacity 0.3s, color 0.3s;
+}
+.pp-paw[data-on="true"] { opacity: 1; color: var(--color-sun); animation: pp-stamp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+@keyframes pp-stamp {
+  from { opacity: 0; transform: translateY(calc(var(--py) - 10px)) rotate(var(--pr)) scale(1.8); }
+  to { opacity: 1; transform: translateY(var(--py)) rotate(var(--pr)) scale(1); }
+}

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from '@/app/Layout'
 import { SmoothScroll } from '@/app/SmoothScroll'
+import { IntroLoader } from '@/app/loader/IntroLoader'
 import { ToastProvider } from '@/components/ui/Toast'
 
 // Feature pages (owned by feature engineers) — lazy so the 3D bundle only loads on the story page.
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <SmoothScroll>
+        <IntroLoader />
         <ToastProvider>
         <Suspense fallback={<PageFallback />}>
           <Routes>
