@@ -623,8 +623,8 @@ function World({ tier, onReady }: { tier: Tier; onReady: () => void }) {
 
   return (
     <>
-      <hemisphereLight ref={hemi} args={['#5a5a9a', '#1c1830', 1.6]} />
-      <directionalLight ref={key} position={[-3, 4, 3]} intensity={2.2} color="#a8b8ff" />
+      <hemisphereLight ref={hemi} args={['#8682c4', '#2a2342', 2.3]} />
+      <directionalLight ref={key} position={[-3, 4, 3]} intensity={2.8} color="#c4ccff" />
       <mesh rotation-x={-HALF_PI}>
         <circleGeometry args={[30, 48]} />
         <meshStandardMaterial ref={groundMat} color={SHOTS[0].ground} roughness={1} />

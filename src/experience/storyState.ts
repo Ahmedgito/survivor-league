@@ -56,12 +56,13 @@ export const SHOTS: Shot[] = [
   // 0 · Waiting (night)
   {
     cam: [1.5, 1.05, 4.3], target: [0, 0.45, 0],
-    bg: '#1c1830', ground: '#2a2342', hemiSky: '#5a5a9a', hemiGround: '#1c1830', hemiI: 1.6, key: '#a8b8ff', keyI: 2.2,
+    // Moonlight bright enough that Biscuit's brown coat reads against the night (was near-black).
+    bg: '#1c1830', ground: '#2a2342', hemiSky: '#8682c4', hemiGround: '#2a2342', hemiI: 2.3, key: '#c4ccff', keyI: 2.8,
   },
   // 1 · Noticed (door + warm light)
   {
     cam: [2.3, 1.2, 4.0], target: [0.7, 0.5, -0.4],
-    bg: '#2a2342', ground: '#342b52', hemiSky: '#6a5f9a', hemiGround: '#2a2342', hemiI: 1.7, key: '#b8c0ff', keyI: 1.8,
+    bg: '#2a2342', ground: '#342b52', hemiSky: '#8f84c2', hemiGround: '#342b52', hemiI: 2.3, key: '#ccd2ff', keyI: 2.4,
   },
   // 2 · The right fit (pet parade)
   {
