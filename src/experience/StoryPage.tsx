@@ -21,6 +21,7 @@ import { cn } from '@/lib/cn'
 import { PETS } from '@/data/pets'
 import { BEAT_CLASSES, CHAPTERS, HomeTitle, NIGHTS, Words, beat, type Chapter } from './chapters'
 import { EndPanel } from './EndPanel'
+import { ScrollCue } from './ScrollCue'
 import { BEATS, CHAPTER_VH, storyState } from './storyState'
 import type { Tier } from './StoryScene'
 
@@ -194,6 +195,7 @@ export default function StoryPage() {
           <PawPrint className="size-4 animate-pulse motion-reduce:animate-none" /> Waking Biscuit up…
         </p>
       )}
+      {immersive && <ScrollCue show={ready} />}
 
       {immersive ? (
         <div id="story" className="relative z-10">
