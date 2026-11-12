@@ -94,13 +94,16 @@ export function ToastProvider({ children, max = 3 }: { children: ReactNode; max?
         aria-label="Notifications"
         className="pointer-events-none fixed inset-x-0 z-50 flex flex-col items-center gap-2 px-4 bottom-[var(--toast-offset,88px)] md:bottom-6 md:items-end md:px-6"
       >
-        <ol role="status" aria-live="polite" className="flex w-full max-w-sm flex-col gap-2">
+        {/* Live region wraps the list (a role on the <ol> itself would strip its list semantics). */}
+        <div role="status" aria-live="polite" className="w-full max-w-sm">
+        <ol className="flex w-full flex-col gap-2">
           <AnimatePresence initial={false}>
             {items.map((item) => (
               <ToastCard key={item.id} item={item} onDismiss={() => dismiss(item.id)} />
             ))}
           </AnimatePresence>
         </ol>
+        </div>
       </div>
     </ToastContext.Provider>
   );

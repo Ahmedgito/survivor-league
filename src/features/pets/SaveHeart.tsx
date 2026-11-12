@@ -79,7 +79,10 @@ export function SaveHeart({
       <button
         type="button"
         aria-pressed={saved}
-        aria-label={variant === 'icon' ? (saved ? `Remove ${pet.name} from saved` : `Save ${pet.name}`) : undefined}
+        // Stable name + aria-pressed carries the state. (A name that flips to "Remove…" while
+        // aria-pressed=true made screen readers say "Remove Luna from saved, pressed".)
+        aria-label={variant === 'icon' ? `Save ${pet.name}` : undefined}
+        title={variant === 'icon' ? (saved ? `Remove ${pet.name} from saved` : `Save ${pet.name}`) : undefined}
         onClick={onClick}
         className={cn(
           'inline-flex items-center justify-center gap-2 rounded-full bg-white font-semibold text-ink',

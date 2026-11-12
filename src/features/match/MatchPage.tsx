@@ -66,7 +66,9 @@ export default function MatchPage() {
   const [step, setStep] = useState(1)
   const [showError, setShowError] = useState(false)
   const legendRefs = useRef<(HTMLLegendElement | null)[]>([])
-  const firstRender = useRef(true)
+  // Last step we moved focus for. (A "firstRender" boolean broke under React StrictMode: the
+  // effect runs twice on mount, so the 2nd run stole focus to Q1 on page load.)
+  const focusedStep = useRef(step)
 
   useEffect(() => {
     document.title = 'Find your match · PawPath'
@@ -74,10 +76,8 @@ export default function MatchPage() {
 
   // Move focus to the new question's legend whenever the step changes (not on first load).
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false
-      return
-    }
+    if (focusedStep.current === step) return
+    focusedStep.current = step
     const id = window.setTimeout(() => { const el = legendRefs.current[step - 1]; el?.focus({ preventScroll: true }); document.getElementById('quiz-progress')?.scrollIntoView({ block: 'start' }) }, 30)
     return () => window.clearTimeout(id)
   }, [step])

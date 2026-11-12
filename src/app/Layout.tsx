@@ -1,13 +1,50 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { Heart, Menu, PawPrint, X } from 'lucide-react'
+import { Heart, Menu, PawPrint, Sparkles, X } from 'lucide-react'
 import { useSavedPets } from '@/lib/savedPets'
+import { announce, setMotionPreference, useReducedMotion } from '@/lib/a11y'
 import { cn } from '@/lib/cn'
+
+/** Visitor-controlled animations switch (defaults to the device's reduced-motion setting). */
+function MotionToggle({ className, showLabel = false }: { className?: string; showLabel?: boolean }) {
+  const reduced = useReducedMotion()
+  const toggle = () => {
+    const next = reduced ? 'on' : 'off'
+    setMotionPreference(next)
+    announce(next === 'on' ? 'Animations on' : 'Animations off')
+  }
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-pressed={!reduced}
+      title={reduced ? 'Turn animations on' : 'Turn animations off'}
+      className={cn(
+        'inline-flex h-11 items-center gap-2 rounded-full border text-sm font-semibold transition',
+        showLabel ? 'px-4' : 'w-11 justify-center',
+        reduced ? 'border-field-border bg-surface text-muted hover:text-ink' : 'border-primary bg-primary-soft text-primary-strong',
+        className,
+      )}
+    >
+      <Sparkles aria-hidden className="size-4 shrink-0" />
+      {showLabel ? (
+        <>
+          <span>Animations</span>
+          <span aria-hidden className="ml-auto rounded-full bg-surface px-2 py-0.5 text-xs font-bold text-ink">
+            {reduced ? 'Off' : 'On'}
+          </span>
+        </>
+      ) : (
+        <span className="sr-only">Animations</span>
+      )}
+    </button>
+  )
+}
 
 const NAV = [
   { to: '/', label: 'Story', end: true },
   { to: '/pets', label: 'Meet the pets' },
-  { to: '/match', label: 'Find my match' },
+  { to: '/match', label: 'Match quiz' },
 ]
 
 function SavedBadge({ className }: { className?: string }) {
@@ -31,6 +68,17 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
   useEffect(() => setOpen(false), [pathname])
+  // Esc closes the mobile menu and returns focus to its toggle.
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      setOpen(false)
+      document.querySelector<HTMLButtonElement>('button[aria-controls="mobile-menu"]')?.focus()
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open])
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6">
@@ -65,6 +113,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <MotionToggle className="hidden sm:inline-flex" />
           <SavedBadge />
           <Link
             to="/match"
@@ -86,7 +135,7 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="mx-auto mt-2 max-w-6xl rounded-3xl border border-line bg-cream p-3 shadow-card md:hidden">
+        <nav id="mobile-menu" aria-label="Main menu" className="mx-auto mt-2 max-w-6xl rounded-3xl border border-line bg-cream p-3 shadow-card md:hidden">
           <ul className="flex flex-col">
             {NAV.map((n) => (
               <li key={n.to}>
@@ -102,7 +151,10 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-        </div>
+          <div className="mt-2 border-t border-line pt-2">
+            <MotionToggle showLabel className="h-12 w-full rounded-2xl" />
+          </div>
+        </nav>
       )}
     </header>
   )

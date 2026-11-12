@@ -28,8 +28,9 @@
 ## Accessibility and responsive checks
 - Mobile-first; tested at 360 / 390 / 768 / 1280 px.
 - `prefers-reduced-motion`: smooth scroll is turned off and the story becomes a static, readable sequence. There is also a no-WebGL fallback.
+- **Animations toggle** (navbar, or the mobile menu): visitors can switch motion on or off themselves (`aria-pressed`). The still version of the story offers "Play the animated story". The device setting stays the default. We added this after finding that our own laptop's Windows "Animation effects" setting silently disabled the whole 3D story.
 - Skip links ("Skip to content", "Skip the story"), visible focus rings, labelled form fields with `aria-describedby` errors, `aria-pressed` filter chips, an `aria-live` results count.
-- Lighthouse Accessibility: _<score>_
+- Lighthouse Accessibility (mobile, 360px): **100** on `/pets`, `/pets/biscuit`, `/pets/bubbles`, `/match`, `/match/results`, `/adopt/biscuit` and `/saved`; Best Practices 100
 
 ## AI tools used and what we checked or changed
 - **Tools:** Claude Code (Claude Opus) as a team of agents (experience director, 3D asset engineer, component scout, three feature engineers and a QA pass), plus the React Bits and 21st.dev component libraries.
@@ -38,6 +39,9 @@
   - Downloaded components animated even with reduced motion, and some used click-only, non-keyboard triggers. We added reduced-motion paths and made all triggers keyboard accessible.
   - Downloaded 3D models: the bird was lying sideways, and the Shiba and Husky had duplicated animations. We fixed both and compressed every pet to ≤ 302 KB.
   - We refused a dog model copied from another public repo because it belongs to Dogstudio, and used only CC0 models instead.
+  - All 3D models rendered almost black (they export as fully metallic). We made the materials non-metallic and re-checked every chapter in screenshots.
+  - Keyboard focus was invisible site-wide: Tailwind v4's `outline-none` cancelled our focus styles. We added a global fix and verified it on every control.
+  - On our own laptop the story never animated, because Windows "Animation effects" was off. We added a visitor-controlled Animations toggle.
 
 ## Limitations and next steps
 - **Limitations:** inquiries aren't sent anywhere; pets and shelters are fictional; saved pets only persist in this browser.

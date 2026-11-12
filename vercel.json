@@ -4,5 +4,5 @@
   "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/((?!models/|assets/|favicon).*)", "destination": "/index.html" }]
+  "rewrites": [{ "source": "/((?!models/|assets/|favicon|robots.txt).*)", "destination": "/index.html" }]
 }
