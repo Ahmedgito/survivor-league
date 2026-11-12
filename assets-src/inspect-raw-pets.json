@@ -1,0 +1,1120 @@
+[
+ {
+  "file": "dog.glb",
+  "sizeKB": 289.9,
+  "triangles": 3604,
+  "extensionsUsed": [],
+  "animations": [
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Death",
+    "duration": 0.875
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Headbutt",
+    "duration": 0.625
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Idle",
+    "duration": 6.667
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Idle_Eating",
+    "duration": 3.333
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Jump_Loop",
+    "duration": 1
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Jump_Start",
+    "duration": 0.25
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Run",
+    "duration": 0.5
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Walk",
+    "duration": 0.833
+   }
+  ],
+  "meshes": [
+   "Dog"
+  ],
+  "meshNodes": [
+   "Dog"
+  ],
+  "skins": 1,
+  "materials": [
+   {
+    "name": "AtlasMaterial",
+    "baseColor": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "texture": true,
+    "vertexColors": true
+   }
+  ],
+  "textures": [
+   {
+    "name": "Atlas.png",
+    "mime": "image/png",
+    "size": [
+     512,
+     512
+    ]
+   }
+  ],
+  "bboxMin": [
+   -0.475,
+   -0.021,
+   -0.77
+  ],
+  "bboxMax": [
+   0.475,
+   1.877,
+   1.328
+  ],
+  "heads": [
+   {
+    "name": "Head",
+    "world": [
+     0,
+     1.296,
+     0.303
+    ]
+   },
+   {
+    "name": "Head_end",
+    "world": [
+     0,
+     1.296,
+     0.763
+    ]
+   },
+   {
+    "name": "Head_end_end",
+    "world": [
+     0,
+     1.296,
+     1.223
+    ]
+   }
+  ],
+  "tails": [
+   {
+    "name": "Tail",
+    "world": [
+     0,
+     0.787,
+     -0.681
+    ]
+   },
+   {
+    "name": "Tail_end",
+    "world": [
+     0,
+     1.84,
+     -0.69
+    ]
+   },
+   {
+    "name": "Tail_end_end",
+    "world": [
+     0,
+     2.894,
+     -0.698
+    ]
+   }
+  ]
+ },
+ {
+  "file": "cat.glb",
+  "sizeKB": 233.1,
+  "triangles": 2448,
+  "extensionsUsed": [],
+  "animations": [
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Death",
+    "duration": 0.875
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Headbutt",
+    "duration": 0.625
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Idle",
+    "duration": 6.667
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Idle_Eating",
+    "duration": 3.333
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Jump_Loop",
+    "duration": 1
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Jump_Start",
+    "duration": 0.25
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Run",
+    "duration": 0.667
+   },
+   {
+    "name": "AnimalArmature|AnimalArmature|AnimalArmature|Walk",
+    "duration": 1
+   }
+  ],
+  "meshes": [
+   "Cat"
+  ],
+  "meshNodes": [
+   "Cat"
+  ],
+  "skins": 1,
+  "materials": [
+   {
+    "name": "AtlasMaterial",
+    "baseColor": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "texture": true,
+    "vertexColors": true
+   }
+  ],
+  "textures": [
+   {
+    "name": "Atlas.png",
+    "mime": "image/png",
+    "size": [
+     512,
+     512
+    ]
+   }
+  ],
+  "bboxMin": [
+   -0.656,
+   0.005,
+   -0.929
+  ],
+  "bboxMax": [
+   0.656,
+   1.872,
+   1.231
+  ],
+  "heads": [
+   {
+    "name": "Head",
+    "world": [
+     0,
+     0.755,
+     0.407
+    ]
+   },
+   {
+    "name": "Head_end",
+    "world": [
+     0,
+     0.755,
+     0.867
+    ]
+   },
+   {
+    "name": "Head_end_end",
+    "world": [
+     0,
+     0.755,
+     1.326
+    ]
+   }
+  ],
+  "tails": [
+   {
+    "name": "Tail",
+    "world": [
+     0,
+     0.768,
+     -0.867
+    ]
+   },
+   {
+    "name": "Tail_end",
+    "world": [
+     0,
+     1.821,
+     -0.875
+    ]
+   },
+   {
+    "name": "Tail_end_end",
+    "world": [
+     0,
+     2.874,
+     -0.883
+    ]
+   }
+  ]
+ },
+ {
+  "file": "rabbit.glb",
+  "sizeKB": 625.3,
+  "triangles": 2282,
+  "extensionsUsed": [],
+  "animations": [
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Assembly_End",
+    "duration": 0.5
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Assembly_Loop",
+    "duration": 1
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Assembly_Start",
+    "duration": 0.5
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Chop_End",
+    "duration": 0.458
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Chop_Loop",
+    "duration": 0.667
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Chop_Start",
+    "duration": 0.5
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Death",
+    "duration": 0.75
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Duck",
+    "duration": 1.667
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|HitReact",
+    "duration": 0.583
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Idle",
+    "duration": 1
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Idle_Holding",
+    "duration": 1
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Jump",
+    "duration": 0.25
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Jump_Idle",
+    "duration": 0.5
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Jump_Land",
+    "duration": 0.333
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|No",
+    "duration": 1.667
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Pan_End",
+    "duration": 0.5
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Pan_Loop",
+    "duration": 0.667
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Pan_Start",
+    "duration": 0.5
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Punch",
+    "duration": 0.667
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Run",
+    "duration": 0.542
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Run_Holding",
+    "duration": 0.542
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Sitting_Eating",
+    "duration": 0.667
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Sitting_End",
+    "duration": 0.417
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Sitting_Idle",
+    "duration": 3.333
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Sitting_Start",
+    "duration": 0.417
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Sword",
+    "duration": 0.833
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Walk",
+    "duration": 1
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Walk_Holding",
+    "duration": 1
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Wave",
+    "duration": 1.667
+   },
+   {
+    "name": "CharacterArmature|CharacterArmature|CharacterArmature|Yes",
+    "duration": 1.667
+   }
+  ],
+  "meshes": [
+   "Rabbit",
+   "Eyes"
+  ],
+  "meshNodes": [
+   "Rabbit",
+   "Eyes"
+  ],
+  "skins": 2,
+  "materials": [
+   {
+    "name": "AtlasMaterial",
+    "baseColor": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "texture": true,
+    "vertexColors": true
+   }
+  ],
+  "textures": [
+   {
+    "name": "Sushi_Atlas.png",
+    "mime": "image/png",
+    "size": [
+     512,
+     512
+    ]
+   }
+  ],
+  "bboxMin": [
+   -2.359,
+   -0.002,
+   -1.05
+  ],
+  "bboxMax": [
+   2.359,
+   4.158,
+   0.849
+  ],
+  "heads": [
+   {
+    "name": "Head",
+    "world": [
+     -0.001,
+     2.085,
+     0.037
+    ]
+   },
+   {
+    "name": "Head_end",
+    "world": [
+     -0.001,
+     2.786,
+     0.287
+    ]
+   },
+   {
+    "name": "Head_end_end",
+    "world": [
+     -0.001,
+     3.487,
+     0.537
+    ]
+   }
+  ],
+  "tails": []
+ },
+ {
+  "file": "shiba.glb",
+  "sizeKB": 831.2,
+  "triangles": 1950,
+  "extensionsUsed": [],
+  "animations": [
+   {
+    "name": "Attack",
+    "duration": 1.333
+   },
+   {
+    "name": "Death",
+    "duration": 1.042
+   },
+   {
+    "name": "Eating",
+    "duration": 2.5
+   },
+   {
+    "name": "Gallop",
+    "duration": 0.542
+   },
+   {
+    "name": "Gallop_Jump",
+    "duration": 0.917
+   },
+   {
+    "name": "Idle_HitReact_Left",
+    "duration": 0.667
+   },
+   {
+    "name": "Idle_HitReact_Right",
+    "duration": 0.667
+   },
+   {
+    "name": "Jump_ToIdle",
+    "duration": 1.333
+   },
+   {
+    "name": "Walk",
+    "duration": 1.042
+   },
+   {
+    "name": "Idle_2_HeadLow",
+    "duration": 4
+   },
+   {
+    "name": "Idle_2",
+    "duration": 3.333
+   },
+   {
+    "name": "Idle",
+    "duration": 3.333
+   },
+   {
+    "name": "AnimalArmature|Attack",
+    "duration": 1.167
+   },
+   {
+    "name": "AnimalArmature|Death",
+    "duration": 1.042
+   },
+   {
+    "name": "AnimalArmature|Eating",
+    "duration": 2.667
+   },
+   {
+    "name": "AnimalArmature|Gallop",
+    "duration": 0.542
+   },
+   {
+    "name": "AnimalArmature|Gallop_Jump",
+    "duration": 0.917
+   },
+   {
+    "name": "AnimalArmature|Idle",
+    "duration": 3.333
+   },
+   {
+    "name": "AnimalArmature|Idle_2",
+    "duration": 3.333
+   },
+   {
+    "name": "AnimalArmature|Idle_2_HeadLow",
+    "duration": 4
+   },
+   {
+    "name": "AnimalArmature|Idle_HitReact_Left",
+    "duration": 0.667
+   },
+   {
+    "name": "AnimalArmature|Idle_HitReact_Right",
+    "duration": 0.667
+   },
+   {
+    "name": "AnimalArmature|Jump_ToIdle",
+    "duration": 1.333
+   },
+   {
+    "name": "AnimalArmature|Walk",
+    "duration": 1.042
+   }
+  ],
+  "meshes": [
+   "ShibaInu"
+  ],
+  "meshNodes": [
+   "ShibaInu"
+  ],
+  "skins": 1,
+  "materials": [
+   {
+    "name": "Main",
+    "baseColor": [
+     0.255,
+     0.129,
+     0.036,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Main_Light",
+    "baseColor": [
+     0.292,
+     0.301,
+     0.265,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Black",
+    "baseColor": [
+     0.022,
+     0.022,
+     0.022,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Eyes_White",
+    "baseColor": [
+     0.695,
+     0.695,
+     0.695,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Eyes_Pupil",
+    "baseColor": [
+     0.025,
+     0.015,
+     0.006,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Eyes_Black",
+    "baseColor": [
+     0.005,
+     0.005,
+     0.005,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -0.536,
+   0.004,
+   -1.454
+  ],
+  "bboxMax": [
+   0.536,
+   3.1,
+   2.494
+  ],
+  "heads": [
+   {
+    "name": "Head",
+    "world": [
+     -0.014,
+     2.645,
+     1.814
+    ]
+   },
+   {
+    "name": "Head_end",
+    "world": [
+     -0.029,
+     2.477,
+     2.312
+    ]
+   }
+  ],
+  "tails": [
+   {
+    "name": "Tail1",
+    "world": [
+     0,
+     1.833,
+     -0.963
+    ]
+   },
+   {
+    "name": "Tail2",
+    "world": [
+     0,
+     1.945,
+     -1.125
+    ]
+   },
+   {
+    "name": "Tail3",
+    "world": [
+     0,
+     1.927,
+     -1.391
+    ]
+   },
+   {
+    "name": "Tail3_end",
+    "world": [
+     0,
+     2.046,
+     -1.613
+    ]
+   }
+  ]
+ },
+ {
+  "file": "husky.glb",
+  "sizeKB": 905.8,
+  "triangles": 1920,
+  "extensionsUsed": [],
+  "animations": [
+   {
+    "name": "Attack",
+    "duration": 1.167
+   },
+   {
+    "name": "Death",
+    "duration": 1.042
+   },
+   {
+    "name": "Eating",
+    "duration": 2.667
+   },
+   {
+    "name": "Gallop",
+    "duration": 0.542
+   },
+   {
+    "name": "Gallop_Jump",
+    "duration": 0.917
+   },
+   {
+    "name": "Idle_HitReact_Left",
+    "duration": 0.667
+   },
+   {
+    "name": "Idle_HitReact_Right",
+    "duration": 0.667
+   },
+   {
+    "name": "Jump_ToIdle",
+    "duration": 1.333
+   },
+   {
+    "name": "Walk",
+    "duration": 1.042
+   },
+   {
+    "name": "Idle_2",
+    "duration": 3.333
+   },
+   {
+    "name": "Idle_2_HeadLow",
+    "duration": 4
+   },
+   {
+    "name": "Idle",
+    "duration": 3.333
+   },
+   {
+    "name": "AnimalArmature|Attack",
+    "duration": 1.167
+   },
+   {
+    "name": "AnimalArmature|Death",
+    "duration": 1.042
+   },
+   {
+    "name": "AnimalArmature|Eating",
+    "duration": 2.667
+   },
+   {
+    "name": "AnimalArmature|Gallop",
+    "duration": 0.542
+   },
+   {
+    "name": "AnimalArmature|Gallop_Jump",
+    "duration": 0.917
+   },
+   {
+    "name": "AnimalArmature|Idle",
+    "duration": 3.333
+   },
+   {
+    "name": "AnimalArmature|Idle_2",
+    "duration": 3.333
+   },
+   {
+    "name": "AnimalArmature|Idle_2_HeadLow",
+    "duration": 4
+   },
+   {
+    "name": "AnimalArmature|Idle_HitReact_Left",
+    "duration": 0.667
+   },
+   {
+    "name": "AnimalArmature|Idle_HitReact_Right",
+    "duration": 0.667
+   },
+   {
+    "name": "AnimalArmature|Jump_ToIdle",
+    "duration": 1.333
+   },
+   {
+    "name": "AnimalArmature|Walk",
+    "duration": 1.042
+   }
+  ],
+  "meshes": [
+   "Cube"
+  ],
+  "meshNodes": [
+   "Cube"
+  ],
+  "skins": 1,
+  "materials": [
+   {
+    "name": "Material",
+    "baseColor": [
+     0.052,
+     0.053,
+     0.048,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Material.001",
+    "baseColor": [
+     0.292,
+     0.301,
+     0.265,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Material.006",
+    "baseColor": [
+     0.022,
+     0.022,
+     0.022,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Material.003",
+    "baseColor": [
+     0.695,
+     0.695,
+     0.695,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Material.002",
+    "baseColor": [
+     0.005,
+     0.005,
+     0.005,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -0.495,
+   0.003,
+   -1.474
+  ],
+  "bboxMax": [
+   0.495,
+   3.194,
+   2.415
+  ],
+  "heads": [
+   {
+    "name": "Head",
+    "world": [
+     0.058,
+     2.63,
+     1.805
+    ]
+   },
+   {
+    "name": "Head_end",
+    "world": [
+     0.081,
+     2.493,
+     2.313
+    ]
+   }
+  ],
+  "tails": [
+   {
+    "name": "Tail1",
+    "world": [
+     0,
+     1.774,
+     -0.81
+    ]
+   },
+   {
+    "name": "Tail2",
+    "world": [
+     0,
+     1.935,
+     -0.983
+    ]
+   },
+   {
+    "name": "Tail3",
+    "world": [
+     0.02,
+     2.153,
+     -1.161
+    ]
+   },
+   {
+    "name": "Tail4",
+    "world": [
+     0.055,
+     2.379,
+     -1.295
+    ]
+   },
+   {
+    "name": "Tail5",
+    "world": [
+     0.108,
+     2.66,
+     -1.335
+    ]
+   },
+   {
+    "name": "Tail6",
+    "world": [
+     0.136,
+     2.816,
+     -1.292
+    ]
+   },
+   {
+    "name": "Tail6_end",
+    "world": [
+     0.179,
+     3.01,
+     -1.215
+    ]
+   }
+  ]
+ },
+ {
+  "file": "goldfish.glb",
+  "sizeKB": 173.3,
+  "triangles": 1590,
+  "extensionsUsed": [],
+  "animations": [
+   {
+    "name": "Fish_Armature|Attack",
+    "duration": 0.625
+   },
+   {
+    "name": "Fish_Armature|Death",
+    "duration": 3
+   },
+   {
+    "name": "Fish_Armature|Out_Of_Water",
+    "duration": 1.5
+   },
+   {
+    "name": "Fish_Armature|Swimming_Fast",
+    "duration": 1.042
+   },
+   {
+    "name": "Fish_Armature|Swimming_Impulse",
+    "duration": 1.167
+   },
+   {
+    "name": "Fish_Armature|Swimming_Normal",
+    "duration": 2.292
+   }
+  ],
+  "meshes": [
+   "Cube.001",
+   "Cube.025"
+  ],
+  "meshNodes": [
+   "Cube.001",
+   "Cube.025"
+  ],
+  "skins": 2,
+  "materials": [
+   {
+    "name": "Goldfish_Fins",
+    "baseColor": [
+     0.438,
+     0.376,
+     0.196,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Material.016",
+    "baseColor": [
+     0.414,
+     0.406,
+     0.293,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Goldfish_Main",
+    "baseColor": [
+     0.283,
+     0.127,
+     0.032,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Goldfish_Light",
+    "baseColor": [
+     0.414,
+     0.406,
+     0.293,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Eyes",
+    "baseColor": [
+     0.013,
+     0.013,
+     0.013,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -1.639,
+   -1.693,
+   -3.807
+  ],
+  "bboxMax": [
+   1.639,
+   2.784,
+   1.833
+  ],
+  "heads": [],
+  "tails": []
+ },
+ {
+  "file": "bird.glb",
+  "sizeKB": 47.4,
+  "triangles": 1204,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "Ernest"
+  ],
+  "meshNodes": [
+   "Ernest"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "Atlas",
+    "baseColor": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "texture": true,
+    "vertexColors": false
+   }
+  ],
+  "textures": [
+   {
+    "name": "Atlas_Pirate.png",
+    "mime": "image/png",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  ],
+  "bboxMin": [
+   -0.375,
+   -0.009,
+   -0.656
+  ],
+  "bboxMax": [
+   0.39,
+   0.377,
+   -0.021
+  ],
+  "heads": [],
+  "tails": []
+ }
+]

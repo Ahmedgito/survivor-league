@@ -171,14 +171,21 @@ If the brief is **assigned by draw**, everything below still applies. Just rewri
 ## 5. Our project definition (fill in and keep current)
 
 ```
-Brief chosen:        #__  ______________________
-Intended audience:   (one sentence, specific — e.g. "first-time adopters aged 16–24 in Karachi")
-Primary task:        (one verb phrase — e.g. "find a compatible pet and send an adoption inquiry")
-Primary action/CTA:  (button label — e.g. "Find my match")
-Signature feature:   (the one distinctive, USEFUL thing — and why it helps the user)
-Known limitation:    (be honest — judges reward naming it)
-Next step:           (what we'd build next with more time)
+Brief chosen:        #2  Pet Adoption Platform  →  "PawPath"
+Intended audience:   Teens and young adults (16–24) adopting their FIRST pet, often living in a flat or
+                     with family, who decide emotionally but need an honest fit.
+Primary task:        Find a pet that fits your life and send an adoption inquiry.
+Primary action/CTA:  "Find my match" (landing) → "Ask to adopt {name}" (profile) → "Send my inquiry" (form)
+Signature feature:   1) An immersive scroll story: Biscuit the shelter dog's journey home, in low-poly 3D,
+                     which teaches the matching idea. 2) Lifestyle Match: 4 questions → ranked pets with
+                     a % score, "why it fits" reasons and one honest "heads-up". This targets the most
+                     common reason adoptions fail: a lifestyle mismatch.
+Known limitation:    Inquiries are not sent anywhere. Pets and shelters are fictional, and saved pets live
+                     only in this browser (localStorage).
+Next step:           Real shelter listings via an API, shelter-side inquiry management, compare two pets.
 ```
+
+Full blueprint: [docs/plan/01-experience.md](docs/plan/01-experience.md) · Assets: [docs/plan/02-assets.md](docs/plan/02-assets.md) · Components: [docs/plan/03-components.md](docs/plan/03-components.md)
 
 ### Example: Pet Adoption (if chosen)
 
@@ -247,9 +254,20 @@ The rubric rewards teams who **"explain a meaningful check or edit to AI output.
 
 | # | Date | What the AI produced | What we checked | What was wrong or weak | What we changed and why |
 |---|------|----------------------|-----------------|------------------------|-------------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
+| 1 | 2026-11-12 | A first palette with a bright coral CTA (`#F97316` / `#FF7A59`) and white text | WCAG contrast, computed with a script | 2.80:1 and 2.57:1, failing 4.5:1 | Darkened the CTA to `#C2410C` (5.18:1), hover `#9A3412` (7.31:1) |
+| 2 | 2026-11-12 | A soft beige input border `#E7DCCF` | Non-text contrast (WCAG 1.4.11) | 1.35:1 against white, so the inputs were nearly invisible | Added a `field-border` token `#7A7189` (4.61:1); beige is kept for decorative dividers only |
+| 3 | 2026-11-12 | An AI suggestion to render a live 3D view inside every catalogue card | Mobile performance and screen-reader semantics | Heavy WebGL on the core-flow page, and no alt text | Cards use tinted visuals; live 3D appears only on the profile turntable, with a text description |
+| 4 | 2026-11-12 | An AI suggestion to put the inquiry form in a slide-over drawer | Keyboard focus trap and Back-button behaviour at 360px | Modal risks with no usability gain | A dedicated `/adopt/:petId` page; focus moves to the success heading |
+| 5 | 2026-11-12 | React Bits components as downloaded (BlurText, RotatingText, ScrollReveal, SegmentedControl, ClickSpark…) | Reduced-motion behaviour, keyboard access, contrast | They animated even with reduced motion, were triggered by clicking non-buttons, inactive labels were 4.2:1, and ClickSpark's default colour was invisible white | Added reduced-motion paths, removed the click-only triggers, raised the contrast to 6.9:1, themed via CSS tokens |
+| 6 | 2026-11-12 | A 21st.dev bottom-nav component | Licence, focus styles | No licence listed, and it stripped the focus ring (`focus-visible:ring-0`) | Rejected; wrote our own accessible nav |
+| 7 | 2026-11-12 | Downloaded 3D models (Poly Pizza) | Inspected orientation, clips and size with gltf-transform | The bird lay on its side facing +X; Shiba and Husky had every animation duplicated (24 clips); the files were 441–477 KB | Baked the bird upright facing +Z, removed duplicate clips, meshopt-compressed to ≤ 302 KB per pet (1.31 MB total) |
+| 8 | 2026-11-12 | Downloading a dog model from another public repo ("it's only for personal use") | Licence check | The model belongs to Dogstudio; a public repo and hosted link redistribute it | Used only CC0 Quaternius models; credits in the README |
+| 9 | 2026-11-12 | First match-scoring rule: home points only if `bestHome` contained the exact home type | Ran the rule against the real dataset | A cat suited to "flat or house" lost all 30 home points for someone with a yard | Ranked the home types so more space never costs points |
+| 10 | 2026-11-12 | Inquiry form submit handler | Rapid double-click test | A fast double-click saved 2 inquiries | Added a guard that updates instantly; re-tested with 3 rapid clicks, which saved 1 inquiry |
+| 11 | 2026-11-12 | Quiz focus management | Keyboard walkthrough at 360px | Focus moved under the fixed navbar; the first invalid field had no visible focus ring | Scroll offset for the navbar; focus ring on every focused text field |
+| 12 | 2026-11-12 | Shared Button/Chip/SegmentedControl styles (`outline-none focus-visible:outline-3`) | Inspected computed styles of keyboard-focused elements | In Tailwind v4, `outline-none` sets `outline-style: none`, so focus rings were **invisible** site-wide | Added a global unlayered `:focus-visible` rule (3px, `#2563EB`; sun yellow on night surfaces) |
+| 13 | 2026-11-12 | AI-planned 6-segment species filter | Tested at 360px | "Fish" was clipped off-screen | Wrapping `aria-pressed` chips on phones; the segmented control from 640px up |
+| 14 | 2026-11-12 | 3D pet tinting with the full `pet.tint` colour | Visual check of each pet in the turntable | The texture-atlas dog went almost black; the goldfish turned brown | Tint depends on the material: full colour for flat materials, a 50% blend for texture atlases |
 
 **Good things to check and log:**
 - Contrast failures in AI-picked colors (fixed after a Lighthouse or contrast check)

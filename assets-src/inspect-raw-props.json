@@ -1,0 +1,395 @@
+[
+ {
+  "file": "bone.glb",
+  "sizeKB": 24.2,
+  "triangles": 204,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "bone_A"
+  ],
+  "meshNodes": [
+   "bone_A"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "HalloweenBits",
+    "baseColor": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "texture": true,
+    "vertexColors": false
+   }
+  ],
+  "textures": [
+   {
+    "name": "halloweenbits_texture.png",
+    "mime": "image/png",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  ],
+  "bboxMin": [
+   -0.353,
+   -0.138,
+   -0.1
+  ],
+  "bboxMax": [
+   0.353,
+   0.138,
+   0.1
+  ],
+  "heads": [],
+  "tails": []
+ },
+ {
+  "file": "bowl.glb",
+  "sizeKB": 30.7,
+  "triangles": 256,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "bowl"
+  ],
+  "meshNodes": [
+   "bowl"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "restaurant",
+    "baseColor": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "texture": true,
+    "vertexColors": false
+   }
+  ],
+  "textures": [
+   {
+    "name": "restaurantbits_texture.png",
+    "mime": "image/png",
+    "size": [
+     1024,
+     1024
+    ]
+   }
+  ],
+  "bboxMin": [
+   -0.475,
+   0,
+   -0.475
+  ],
+  "bboxMax": [
+   0.475,
+   0.3,
+   0.475
+  ],
+  "heads": [],
+  "tails": []
+ },
+ {
+  "file": "sofa.glb",
+  "sizeKB": 14.6,
+  "triangles": 416,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "Sofa"
+  ],
+  "meshNodes": [
+   "Sofa"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "Red",
+    "baseColor": [
+     0.261,
+     0.038,
+     0.036,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -1.675,
+   -0.004,
+   -0.886
+  ],
+  "bboxMax": [
+   1.675,
+   1.32,
+   0.579
+  ],
+  "heads": [],
+  "tails": []
+ },
+ {
+  "file": "door.glb",
+  "sizeKB": 23.8,
+  "triangles": 456,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "Door_1"
+  ],
+  "meshNodes": [
+   "Door_1"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "White",
+    "baseColor": [
+     0.358,
+     0.355,
+     0.344,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Metal",
+    "baseColor": [
+     0.118,
+     0.091,
+     0.08,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -1.736,
+   0,
+   -0.21
+  ],
+  "bboxMax": [
+   0,
+   4.188,
+   0.21
+  ],
+  "heads": [],
+  "tails": []
+ },
+ {
+  "file": "fence.glb",
+  "sizeKB": 12.8,
+  "triangles": 212,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "Fence"
+  ],
+  "meshNodes": [
+   "Fence"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "Brown",
+    "baseColor": [
+     0.307,
+     0.136,
+     0.057,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -1.602,
+   -0.011,
+   -0.071
+  ],
+  "bboxMax": [
+   1.675,
+   1.086,
+   0.071
+  ],
+  "heads": [],
+  "tails": []
+ },
+ {
+  "file": "plant.glb",
+  "sizeKB": 16.2,
+  "triangles": 449,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "Houseplant_7"
+  ],
+  "meshNodes": [
+   "Houseplant_7"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "Black",
+    "baseColor": [
+     0.028,
+     0.028,
+     0.028,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Brown",
+    "baseColor": [
+     0.092,
+     0.071,
+     0.045,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Plant_Green",
+    "baseColor": [
+     0.198,
+     0.314,
+     0.043,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -0.538,
+   0.002,
+   -0.586
+  ],
+  "bboxMax": [
+   0.628,
+   0.883,
+   0.634
+  ],
+  "heads": [],
+  "tails": []
+ },
+ {
+  "file": "tree.glb",
+  "sizeKB": 45.4,
+  "triangles": 2412,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "Tree_3"
+  ],
+  "meshNodes": [
+   "Tree_3"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "Tree_Green",
+    "baseColor": [
+     0.148,
+     0.213,
+     0.019,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Tree_Wood",
+    "baseColor": [
+     0.114,
+     0.07,
+     0.035,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -2.29,
+   0,
+   -1.32
+  ],
+  "bboxMax": [
+   1.976,
+   5.589,
+   1.32
+  ],
+  "heads": [],
+  "tails": []
+ },
+ {
+  "file": "house.glb",
+  "sizeKB": 56.3,
+  "triangles": 1028,
+  "extensionsUsed": [],
+  "animations": [],
+  "meshes": [
+   "Houses_FirstAge_1_Level3"
+  ],
+  "meshNodes": [
+   "Houses_FirstAge_1_Level3"
+  ],
+  "skins": 0,
+  "materials": [
+   {
+    "name": "Wood",
+    "baseColor": [
+     0.246,
+     0.144,
+     0.054,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   },
+   {
+    "name": "Stone",
+    "baseColor": [
+     0.244,
+     0.246,
+     0.215,
+     1
+    ],
+    "texture": false,
+    "vertexColors": false
+   }
+  ],
+  "textures": [],
+  "bboxMin": [
+   -0.435,
+   0.002,
+   -0.585
+  ],
+  "bboxMax": [
+   0.435,
+   0.766,
+   0.587
+  ],
+  "heads": [],
+  "tails": []
+ }
+]
